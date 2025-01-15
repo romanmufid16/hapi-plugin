@@ -39,7 +39,6 @@ class NoteHandler {
   }
 
   async getNoteByIdHandler(request, h) {
-    this._validator.validateNotePayload(request.payload);
     const { id } = request.params;
     const note = await this._service.getNoteById(id);
     return {
